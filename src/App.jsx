@@ -41,22 +41,24 @@ function App() {
   }
 
   return (
-    <div className={`main ${darkMode ? "dark-mode" : "light-mode"}`}>
+    <div className={`app-wrapper ${darkMode ? "dark-mode" : "light-mode"}`}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="create-area-container">
-        <CreateArea onAdd={addNote} />
-      </div>
-      <div className="note-container">
-        {notes.map((note, index) => (
-          <Note
-            key={index}
-            id={index}
-            title={note.title}
-            content={note.content}
-            onDelete={handleDeleteNote}
-          />
-        ))}
-      </div>
+      <main className="main-content">
+        <div className="create-area-container">
+          <CreateArea onAdd={addNote} />
+        </div>
+        <div className="note-container">
+          {notes.map((note, index) => (
+            <Note
+              key={index}
+              id={index}
+              title={note.title}
+              content={note.content}
+              onDelete={handleDeleteNote}
+            />
+          ))}
+        </div>
+      </main>
       <Footer />
     </div>
   );
