@@ -12,7 +12,6 @@ function App() {
     return savedDarkMode || false;
   });
 
-  // Load notes from localStorage
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem("notes"));
     if (savedNotes && savedNotes.length) {
@@ -20,14 +19,12 @@ function App() {
     }
   }, []);
 
-  // Save notes to localStorage
   useEffect(() => {
     if (notes.length) {
       localStorage.setItem("notes", JSON.stringify(notes));
     }
   }, [notes]);
 
-  // Update body class for dark mode
   useEffect(() => {
     document.documentElement.classList.toggle("dark-mode", darkMode);
     document.documentElement.classList.toggle("light-mode", !darkMode);

@@ -40,13 +40,10 @@
 }
 
 :root.light-mode {
-  /* Explicit light‐mode (same as defaults, but can be useful if you toggle back) */
   --bg-color: #ffffff;
   --text-color: rgba(0, 0, 0, 0.87);
-  /* …etc… */
 }
 
-/* RESET & BASE */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -66,7 +63,6 @@ body {
   line-height: 1.5;
 }
 
-/* TYPOGRAPHY */
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -79,7 +75,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* BUTTONS */
 button {
   border-radius: 6px;
   border: 1px solid transparent;
@@ -93,7 +88,6 @@ button {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* HEADER */
 header {
   background-color: var(--header-bg);
   position: fixed;
@@ -114,7 +108,6 @@ header h1 {
   font-size: 24px;
 }
 
-/* FOOTER */
 footer {
   position: fixed;
   bottom: 0;
@@ -133,7 +126,6 @@ footer p {
   color: var(--text-color);
 }
 
-/* NOTE CARD */
 .note {
   background-color: var(--note-bg);
   color: var(--note-text);
@@ -145,6 +137,7 @@ footer p {
   width: 100%;
   text-align: left;
 }
+
 .note button {
   float: right;
   background: transparent;
@@ -152,14 +145,17 @@ footer p {
   margin-top: 20px;
   padding: 0;
 }
+
 .note button i {
   font-size: 24px;
   color: var(--note-text);
 }
+
 .note-items {
   display: flex;
   flex-direction: column;
 }
+
 .note-items h1 {
   font-size: 1.5rem;
 }
@@ -173,7 +169,6 @@ footer p {
   margin: 0 auto;
 }
 
-/* CREATE AREA */
 .create-area-container {
   display: flex;
   justify-content: center;
@@ -195,6 +190,7 @@ footer p {
   padding: 15px;
   box-shadow: 0 2px 5px var(--note-shadow);
 }
+
 textarea,
 input {
   border: none;
@@ -218,7 +214,6 @@ input {
   color: var(--button-text);
 }
 
-/* TOGGLE SWITCH */
 .toggle-container {
   display: flex;
   align-items: center;
@@ -265,7 +260,6 @@ input {
   transform: translateX(26px);
 }
 
-/* DIVIDER (if used) */
 .divider {
   width: 100%;
   height: 8px;

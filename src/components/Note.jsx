@@ -9,9 +9,6 @@ const Note = (props) => {
         <p>{content}</p>
       </div>
       <div className="note-button">
-        {/* <button onClick={() => onEdit(id)}>
-          <i className="bx bxs-edit"></i>
-        </button> */}
         <button onClick={() => onDelete(id)}>
           <i className="bx bxs-trash" />
         </button>
