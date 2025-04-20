@@ -1,0 +1,278 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  --bg-color: #ffffff;
+  --text-color: rgba(0, 0, 0, 0.87);
+  --header-bg: #ffffff;
+  --header-border: #000;
+  --footer-bg: #f1f1f1;
+  --footer-border: #ccc;
+  --note-bg: #f0f0f3;
+  --note-text: #000;
+  --note-shadow: rgba(0, 0, 0, 0.2);
+  --input-bg: #f2f2f2;
+  --input-text: #000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
+  --divider-bg: linear-gradient(to right, #444, #666);
+}
+
+:root.dark-mode {
+  /* Dark‑mode overrides */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --header-bg: #000000;
+  --header-border: #555;
+  --footer-bg: #000000;
+  --footer-border: #555;
+  --note-bg: #2c2c2c;
+  --note-text: #ffffff;
+  --note-shadow: rgba(255, 255, 255, 0.1);
+  --input-bg: #3a3a3a;
+  --input-text: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #000;
+  --divider-bg: linear-gradient(to right, #444, #666);
+}
+
+:root.light-mode {
+  /* Explicit light‐mode (same as defaults, but can be useful if you toggle back) */
+  --bg-color: #ffffff;
+  --text-color: rgba(0, 0, 0, 0.87);
+  /* …etc… */
+}
+
+/* RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTONS */
+button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* HEADER */
+header {
+  background-color: var(--header-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px;
+  padding: 0 80px;
+  display: flex;
+  border-bottom: 0.5px solid var(--header-border);
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--text-color);
+  font-size: 24px;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  width: 100%;
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+  justify-content: center;
+}
+footer p {
+  font-size: small;
+  color: var(--text-color);
+}
+
+/* NOTE CARD */
+.note {
+  background-color: var(--note-bg);
+  color: var(--note-text);
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--note-shadow);
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+.note button {
+  float: right;
+  background: transparent;
+  color: var(--note-text);
+  margin-top: 20px;
+  padding: 0;
+}
+.note button i {
+  font-size: 24px;
+  color: var(--note-text);
+}
+.note-items {
+  display: flex;
+  flex-direction: column;
+}
+.note-items h1 {
+  font-size: 1.5rem;
+}
+
+.note-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* CREATE AREA */
+.create-area-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  padding: 0 1rem;
+}
+.create-area {
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 60px;
+}
+.create-area form {
+  background-color: var(--header-bg);
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  padding: 15px;
+  box-shadow: 0 2px 5px var(--note-shadow);
+}
+textarea,
+input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  width: 100%;
+  margin-bottom: 0.75rem;
+  border-radius: 7px;
+}
+input {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.create-area button {
+  margin-top: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+/* TOGGLE SWITCH */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 10px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.switch input:checked + .slider {
+  background-color: #2196f3;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* DIVIDER (if used) */
+.divider {
+  width: 100%;
+  height: 8px;
+  background: var(--divider-bg);
+  margin: 1rem 0;
+}
+
+.dark-mode .create-area form {
+  background-color: #2c2c2c;
+}
