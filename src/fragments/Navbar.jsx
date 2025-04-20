@@ -4,7 +4,7 @@ const Navbar = (props) => {
   const { darkMode, setDarkMode } = props;
   return (
     <header>
-      <h1>Farras's Notes</h1>
+      <h1>Note App</h1>
       <div className="toggle-container">
         <label className="switch">
           <input
