@@ -1,30 +1,28 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import CreateArea from "./components/CreateArea";
-import Note from "./components/Note";
+import React from "react";
 import Footer from "./fragments/Footer";
 import Navbar from "./fragments/Navbar";
+import CreateNewTodo from "./components/CreateNewTodo/CreateNewTodo";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [todos, setTodos] = React.useState([]);
 
-  useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem("notes"));
-    if (savedNotes && savedNotes.length) {
-      setNotes(savedNotes);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (notes.length) {
-      localStorage.setItem("notes", JSON.stringify(notes));
-    }
-  }, [notes]);
+  function handleCreateTodos(value) {
+    setTodos([
+      ...todos,
+      {
+        value,
+        id: crypto.randomUUID(),
+      },
+    ]);
+  }
 
   return (
     <div className={`app-wrapper `}>
       <Navbar />
-
+      <div className="list-wrapper">
+        <p>Hello</p>
+        <CreateNewTodo handleCreateTodos={handleCreateTodos} />
+      </div>
       <Footer />
     </div>
   );

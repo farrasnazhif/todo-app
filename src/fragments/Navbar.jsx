@@ -1,25 +1,8 @@
-import React from "react";
-
-const Navbar = (props) => {
-  const { darkMode, setDarkMode } = props;
+const Navbar = () => {
   return (
     <header>
       <h1>Note App</h1>
-      <div className="toggle-container">
-        <label className="switch">
-          <input
-            type="checkbox"
-            onChange={() => setDarkMode(!darkMode)}
-            checked={darkMode}
-          />
-          <span className="slider round"></span>
-        </label>
-        {darkMode ? (
-          <i className="bx bxs-moon"></i>
-        ) : (
-          <i className="bx bxs-sun"></i>
-        )}
-      </div>
+      <p>Account</p>
     </header>
   );
 };
