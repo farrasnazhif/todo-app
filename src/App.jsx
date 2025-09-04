@@ -13,6 +13,7 @@ function App() {
       {
         value,
         id: crypto.randomUUID(),
+        isCompleted: false,
       },
     ]);
   }
