@@ -1,0 +1,41 @@
+ol {
+  width: 100%;
+  max-width: 480px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  border: solid 0.2px #a9a9a9;
+  border-radius: 6px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.toggleButton {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  text-align: start;
+}
+
+.completedToggleButton::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 90%;
+  height: 5px;
+  background-color: #008000;
+  transform: translateX(5%);
+  pointer-events: none;
+}
+.deleteButton {
+  background-color: transparent;
+  color: #ff0000;
+  padding: 0 10px;
+}
