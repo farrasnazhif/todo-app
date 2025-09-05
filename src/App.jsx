@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "./fragments/Footer";
-import Navbar from "./fragments/Navbar";
+// import Footer from "./fragments/Footer";
+// import Navbar from "./fragments/Navbar";
 import CreateNewTodo from "./components/CreateNewTodo/CreateNewTodo";
 import TodoList from "./components/TodoList/TodoList";
 
@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className={`app-wrapper `}>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="list-wrapper">
         <TodoList
           todos={todos}
@@ -48,7 +48,7 @@ function App() {
         />
         <CreateNewTodo handleCreateTodos={handleCreateTodos} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
